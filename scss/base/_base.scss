@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 100%; // This defines what 1rem is.
+    /* don't set this in px as then the user will not be able to change font-size */
+}
+
+body {
+    box-sizing: border-box;
+    /* this makes sure padding and border are included in the width and height */
+}

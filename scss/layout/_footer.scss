@@ -1,0 +1,29 @@
+.contact {
+    background-color: $color-primary-dark;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    ul {
+        text-align: center;
+
+        li {
+            display: inline-block;
+            padding: 1.5rem;
+
+            a {
+                font-size: 1.3rem;
+                font-weight: 900;
+                text-decoration: none;
+                color: $color-primary-light;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 250px) {
+    .contact {
+        p {
+            font-size: .5rem;
+        }
+    }
+}

@@ -1,0 +1,273 @@
+section.projects {
+    background: linear-gradient(90deg, rgba(28, 29, 37, .05) 0, rgba(28, 29, 37, .05) 1px, transparent 1px, transparent calc(50% - 1px), rgba(28, 29, 37, .05) calc(50% - 1px), rgba(28, 29, 37, .05) 50%, transparent 50%, transparent calc(100% - 1px), rgba(28, 29, 37, .05) calc(100% - 1px), rgba(28, 29, 37, .05) 100%);
+
+    h2 {
+        color: $color-text-gold;
+        text-align: center;
+        padding-top: 2rem;
+        font-weight: 700;
+    }
+
+    .project {
+        position: relative;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-top: 5rem;
+
+        a {
+            display: inline-block;
+            width: 100%;
+
+            .number {
+                position: absolute;
+                margin-top: -45px;
+                top: 0;
+                right: 7px;
+                color: transparent;
+                font-size: 10rem;
+                font-weight: 900;
+                z-index: -1;
+
+            }
+
+            &:hover .number {
+                opacity: 1;
+                color: $color-primary-light;
+                z-index: 4;
+                animation: moveInBottom .2s ease-in backwards .3s;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 0;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: $color-secondary-dark;
+                z-index: 2;
+                transition: width .25s ease-out;
+                opacity: .95;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+            img {
+                width: 100%;
+                box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
+                opacity: .9;
+            }
+
+            &:hover .text-box {
+                h3 {
+                    font-size: 3.7rem;
+                }
+
+                h4 {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .text-box {
+                color: $color-primary-light;
+                font-weight: 700;
+                position: absolute;
+                bottom: 25%;
+                z-index: 3;
+
+                h3 {
+                    font-size: 3rem;
+                    font-weight: 900;
+                    margin-bottom: .7rem;
+                    transition: font-size .2s ease-out .3s;
+                }
+
+                h4 {
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    transition: font-size .2s ease-out .3s;
+                }
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 5rem;
+        }
+    }
+
+    .project:nth-child(even) a .text-box {
+        text-align: left;
+        left: 15%;
+    }
+
+    .project:nth-child(odd) a .text-box {
+        text-align: right;
+        right: 15%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    section.projects .project a {
+
+        .number,
+        &::after {
+            display: none;
+        }
+
+        &:hover .text-box {
+            h3 {
+                font-size: 3rem;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .text-box {
+            h3 {
+                transition: none;
+            }
+
+            h4 {
+                transition: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    section.projects .project a {
+
+        &:hover .text-box {
+            h3 {
+                font-size: 3rem;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .text-box {
+            h3 {
+                font-size: 2.5rem;
+            }
+
+            h4 {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    section.projects .project a {
+        .text-box h3 {
+            font-size: 2rem;
+            margin-bottom: .5rem;
+        }
+
+        &:hover .text-box h3 {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    section.projects .project a {
+        .text-box h3 {
+            font-size: 1.8rem;
+        }
+
+        &:hover .text-box h3 {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    section.projects .project {
+        &:nth-child(even) a .text-box {
+            left: 13%;
+        }
+
+        &:nth-child(odd) a .text-box {
+            right: 13%;
+        }
+
+        a {
+            .text-box h3 {
+                font-size: 1.7rem;
+            }
+
+            &:hover .text-box h3 {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+    @media only screen and (max-width: 530px) {
+        section.projects .project {
+            margin-top: 3rem;
+
+            &:nth-child(even) a .text-box {
+                left: 10%;
+            }
+
+            &:nth-child(odd) a .text-box {
+                right: 10%;
+            }
+
+            a .text-box h3 {
+                font-size: 1.5rem;
+                margin-bottom: .3rem;
+            }
+
+            &:hover .text-box h3 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 250px) {
+        section.projects .project a {
+            .text-box h3 {
+                font-size: 1rem;
+                margin-bottom: .2rem;
+            }
+
+            &:hover .text-box h3 {
+                font-size: 1rem;
+        }
+    }
+}
+
+    @media only screen and (max-width: 160px) {
+        section.projects .project a {
+            .text-box {
+                h3 {
+                    font-size: .8rem;
+                    margin-bottom: 0;
+                }
+    
+                h4 {
+                    font-size: .8rem;
+                }
+            }
+
+            &:hover .text-box {
+                h3 {
+                    font-size: .8rem;
+                }
+    
+                h4 {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
